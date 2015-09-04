@@ -49,7 +49,7 @@ jQuery(document).ready(function() {
 	});
 
 
-	// Style Switcher	
+	// Style Switcher
 	$('#style-switcher').animate({
 		left: '-150px'
 	});
@@ -61,7 +61,7 @@ jQuery(document).ready(function() {
 		if (div.css('left') === '-150px') {
 			$('#style-switcher').animate({
 				left: '0px'
-			}); 
+			});
 		} else {
 			$('#style-switcher').animate({
 				left: '-150px'
@@ -103,12 +103,12 @@ jQuery(document).ready(function() {
 		});
 
 
-	
-   
 
-    
+
+
+
 /***** Contact form *****/
-	    
+
     $('.contact-form form input[type="text"], .contact-form form textarea').on('focus', function() {
     	$('.contact-form form input[type="text"], .contact-form form textarea').removeClass('contact-error');
     });
@@ -118,7 +118,7 @@ jQuery(document).ready(function() {
 	    var postdata = $('.contact-form form').serialize();
 	    $.ajax({
 	        type: 'POST',
-	        url: 'assets/contact.php',
+	        url: 'http://actmob.ngrok.com/api/send/abc',
 	        data: postdata,
 	        dataType: 'json',
 	        success: function(json) {
@@ -140,6 +140,5 @@ jQuery(document).ready(function() {
 	    });
 	});
 
-    
-});
 
+});
