@@ -115,6 +115,7 @@ jQuery(document).ready(function() {
 	$('.contact-form form').submit(function(e) {
 		e.preventDefault();
 	    $('.contact-form form input[type="text"], .contact-form form textarea').removeClass('contact-error');
+			$('.btn-contact').attr('disabled', 'disabled');
 	    var postdata = $('.contact-form form').serialize();
 	    $.ajax({
 	        type: 'POST',
@@ -122,16 +123,19 @@ jQuery(document).ready(function() {
 	        data: postdata,
 	        dataType: 'json',
 	        success: function(json) {
-	            if(json.emailMessage != '') {
+							console.log(json);
+							$('.btn-contact').attr('disabled', null);
+
+	            if(json.emailMessage !== '') {
 	                $('.contact-form form .contact-email').addClass('contact-error');
 	            }
-	            if(json.phoneMessage != '') {
+	            if(json.phoneMessage !== '') {
 	                $('.contact-form form .contact-subject').addClass('contact-error');
 	            }
-	            if(json.messageMessage != '') {
+	            if(json.messageMessage !== '') {
 	                $('.contact-form form textarea').addClass('contact-error');
 	            }
-	            if(json.emailMessage == '' && json.phoneMessage == '' && json.messageMessage == '') {
+	            if(json.success) {
 	                $('.contact-form form').fadeOut('fast', function() {
 	                    $('.contact-form').append('<p>Thanks for contacting us!</p>');
 	                });
