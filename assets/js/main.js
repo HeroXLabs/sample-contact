@@ -119,9 +119,10 @@ jQuery(document).ready(function() {
 	    var postdata = $('.contact-form form').serialize();
 	    $.ajax({
 	        type: 'POST',
-	        url: 'http://actmob-api.herokuapp.com/api/send/abc',
+	        url: 'http://actmob.ngrok.com.com/api/send/abc',
 	        data: postdata,
 	        dataType: 'json',
+          crossDomain:true,
 	        success: function(json) {
 							$('.btn-contact').attr('disabled', null);
 
