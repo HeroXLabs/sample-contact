@@ -125,13 +125,13 @@ jQuery(document).ready(function() {
 	            if(json.emailMessage != '') {
 	                $('.contact-form form .contact-email').addClass('contact-error');
 	            }
-	            if(json.subjectMessage != '') {
+	            if(json.phoneMessage != '') {
 	                $('.contact-form form .contact-subject').addClass('contact-error');
 	            }
 	            if(json.messageMessage != '') {
 	                $('.contact-form form textarea').addClass('contact-error');
 	            }
-	            if(json.emailMessage == '' && json.subjectMessage == '' && json.messageMessage == '') {
+	            if(json.emailMessage == '' && json.phoneMessage == '' && json.messageMessage == '') {
 	                $('.contact-form form').fadeOut('fast', function() {
 	                    $('.contact-form').append('<p>Thanks for contacting us!</p>');
 	                });
