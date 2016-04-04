@@ -119,7 +119,7 @@ jQuery(document).ready(function() {
 	    var postdata = $('.contact-form form').serialize();
 	    $.ajax({
 	        type: 'POST',
-	        url: 'http://actmob-api.heyookapp.com/api/send/abc',
+	        url: 'https://actmob-api.heyookapp.com/api/send/abc',
 	        data: postdata,
 	        dataType: 'json',
           crossDomain:true,
